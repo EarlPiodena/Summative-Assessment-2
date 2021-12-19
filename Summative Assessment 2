@@ -1,0 +1,47 @@
+#include <string>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string name;
+    cout << "Enter your full name: ";
+    getline(cin, name);
+
+    cout << "Hi there " << name << " please input the number of your choice: ";
+    int a;
+    int b = 1;
+    cin >> a;
+
+    while (cin.fail())
+    {
+        cout << "Invalid input. Please enter a valid integer: " << endl;
+
+        cin.clear();
+        cin.ignore(1000, '\n');
+        getline(cin, name);
+    }
+
+    for (int c = a; c > 0; c--) {
+        b = c * b;
+    }
+    cout << "The Factorial of " << a << " is " << b;
+
+    cout << " The following table of 10 for " << a << " is: " << endl;
+
+    int x = 1;
+    while (x <= 10)
+    {
+        cout << a << "a" << x << " = " << a * x << endl;
+        x++;
+    }
+
+    cout << "The power from 1-10 for " << a << " is: " << endl;
+
+    int y = 1;
+
+    do {
+        cout << a << " powered to " << y << " = " << pow(a, y) << endl;
+        y++;
+    } while (y <= 10);
+}
